@@ -1,0 +1,45 @@
+services:
+  app:
+    container_name: nest-grpc
+    build: .
+    command: tail -f /dev/null
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    volumes:
+      - .:/apps
+    networks:
+      - app-network
+
+  db:
+    image: bitnami/mongodb:5.0.17
+    ports:
+      - 27017:27017
+    environment:
+      MONGODB_ROOT_PASSWORD: root
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_REPLICA_SET_KEY: 123456
+      MONGODB_DATABASE: bolsa_valores
+    volumes:
+      - mongodb_data:/bitnami/mongodb
+    networks:
+      - app-network
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: nest-pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=pgadmin4
+    ports:
+      - '5050:80'
+    depends_on:
+      - db
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
