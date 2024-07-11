@@ -4,9 +4,11 @@
 
 ## Next steps
 
-[] - Separate the back-end applications and their corresponding dependencies (currently, both share dependencies).
-[] - Create a docker-compose configuration for the two back-end applications.
-[] - Implement gRPC stream communication in the gRPC server to allow the client to see order values in real-time.
+- [ ] Separate the back-end applications and their corresponding dependencies (currently, both share dependencies).
+
+- [ ] Create a docker-compose configuration for the two back-end applications.
+
+- [ ] Implement gRPC stream communication in the gRPC server to allow the client to see order values in real-time.
 
 ## Installation
 
