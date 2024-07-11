@@ -4,7 +4,8 @@ import { BolsaValoresService } from './bolsa-valores.service';
 import { OrdersModule } from './orders/orders.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
-const dns = 'mongodb://root:root@db:27017/bolsa_valores?authSource=admin&directConnection=true';
+const dns = 
+    'mongodb://root:root@db:27017/bolsa_valores?authSource=admin&directConnection=true';
 
 @Module({
   imports: [

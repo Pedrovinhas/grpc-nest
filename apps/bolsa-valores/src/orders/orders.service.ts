@@ -19,12 +19,14 @@ export class OrdersService {
     })
   }
 
-  findAll() {
-    return `This action returns all orders`;
+  findAll(account_id: string) {
+    return this.orderModel.find({
+      account_id,
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} order`;
+  findOne(id: string) {
+    return this.orderModel.findById(id);
   }
 
   update(id: number, updateOrderDto: UpdateOrderDto) {
