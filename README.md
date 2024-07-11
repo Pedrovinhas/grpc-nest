@@ -26,7 +26,7 @@ $ docker-compose up -d
 # gRPC server
 $ npm run start:dev bolsa-valores
 
-# development
+# gRPC client
 $ npm run start:dev
 ```
 
